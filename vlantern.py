@@ -19,8 +19,9 @@ for f in os.listdir(playlist_dir):
 
 if len(playlist) > 0:
 	vid = os.path.join(playlist_dir,playlist[0])
-	print "Let's watch %s" % vid 
-	os.system('omxplayer %s -b --loop --no-osd') % vid
+	print "Let's watch %s" % vid
+	cmd = 'omxplayer {0} -b --loop --no-osd'.format(vid)
+	os.system(cmd)
 else:
 	print 'No videos found. Sorry...'
 
